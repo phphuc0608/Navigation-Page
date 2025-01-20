@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href={% static "/imgs/logo/usi_white_logo.png" %}>
+  <title>USI HPH DASHBOARD SYSTEM</title>
+</head>
+<body>
+    <div id="content_container">
+        <div id="header_container">
+            <img src="{% static 'imgs/logo/usi_white_logo.png' %}" alt="Logo">
+            <h2>USI HPH DASHBOARD SYSTEM</h4>
+        </div>
+        <div id="main_container">
+            <ul class="list-group">
+                {% for page in pages %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span>{{ page.title }}</span>
+                        <a href="{{ page.link }}" class="btn btn-link" target="_blank">Truy cập</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div>
+                <a href="/login/">Đăng nhập để cập nhật dữ liệu</a>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', san-serif;
+    }
+    
+    @font-face {
+        font-family: "Inter";
+        src: url({% static 'fonts/Inter/Inter-VariableFont_opsz,wght.ttf' %}) format("truetype");
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    #header_container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #0d1126;
+        color: white;
+        padding: 10px 20px;
+        position: fixed;
+    }
+
+    #main_container{
+        padding-top:100px;
+        background-color:rgb(194, 205, 245);
+        color: white;
+        height: 100vh;
+    }
+
+    #header_container img{
+        width: 130px;
+    }
+</style>
+</html>

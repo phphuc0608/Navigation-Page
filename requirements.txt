@@ -1,0 +1,5 @@
+.\offline_packages\asgiref-3.8.1-py3-none-any.whl
+.\offline_packages\django_bootstrap5-24.3-py3-none-any.whl
+.\offline_packages\Django-5.1.5-py3-none-any.whl
+.\offline_packages\sqlparse-0.5.3-py3-none-any.whl
+.\offline_packages\tzdata-2024.2-py2.py3-none-any.whl
