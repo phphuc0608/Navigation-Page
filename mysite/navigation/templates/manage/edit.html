@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href={% static "/imgs/logo/usi_white_logo.png" %}>
+  <title>USI HPH DASHBOARD SYSTEM</title>
+</head>
+<body>
+    <div id="header_container">
+        <img src="{% static 'imgs/logo/usi_white_logo.png' %}" alt="Logo">
+        <h2>USI HPH DASHBOARD SYSTEM</h2>
+        <form method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="logout_button">Sign Out</button>
+        </form>
+    </div>
+    <div id="content_container">
+        <h1>Edit System</h1>
+        <div class="form_container">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form_group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form_group">
+                    <label for="link">Link</label>
+                    <input type="url" id="link" name="link" required>
+                </div>
+                <button type="submit" class="submit_button">Add</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
