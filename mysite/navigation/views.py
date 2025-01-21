@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect  # Thêm redirect vào đây
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
@@ -39,3 +39,22 @@ def manage_view(request):
         return redirect('manage')
     pages = Page.objects.all()
     return render(request, './manage/manage.html', {'pages': pages})
+
+
+def edit_view(request, page_id):
+    page = get_object_or_404(Page, id=page_id)
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        link = request.POST.get('link')
+        page.title = title
+        page.link = link
+        page.save()
+        return redirect('manage')
+    return render(request, './manage/edit.html', {'page': page})
+
+
+@login_required
+def delete_view(request, page_id):
+    page = get_object_or_404(Page, id=page_id)
+    page.delete()
+    return redirect('manage')
