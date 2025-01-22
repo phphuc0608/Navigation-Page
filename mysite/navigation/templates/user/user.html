@@ -21,7 +21,7 @@
             <h1 class="title">Dashboard list</h1>
             <div class="list_container">
                 {% for page in pages %}
-                    <a class="list_box" href="{{ page.link }}">
+                    <a class="list_box" target="_blank" href="{{ page.link }}">
                         <h3>{{ page.title }}</h3>
                     </a> 
                 {% endfor %}
