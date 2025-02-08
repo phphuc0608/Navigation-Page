@@ -26,7 +26,7 @@ Python 3.12.5
 4. Create virtual environment `python -m venv venv`
 5. Active virtual environment `venv\Script\activate`
 6. Install necessary packages `pip install -r requirements.txt`
-## 👴 How to use
+## 🚀 Usage
 1. Change directory `cd mysite`
 2. Start the development server `python manage.py runserver`
 3. Access the system through `http://127.0.0.1:8000/`
