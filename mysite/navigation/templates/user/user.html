@@ -4,18 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href={% static "/imgs/logo/usi_white_logo.png" %}>
   <title>USI HPH DASHBOARD SYSTEM</title>
 </head>
 <body>
     <div id="content_container">
         <div id="header_container">
-            <img src="{% static 'imgs/logo/usi_white_logo.png' %}" alt="Logo">
-            <h2>USI HPH DASHBOARD SYSTEM</h4>
+            {% comment %} <img src="{% static '/imgs/logo/usi_white_logo.png' %}" alt="Logo"> {% endcomment %}
+            <div id="logo" >USI</div>
+            <h2>HPH DASHBOARD SYSTEM</h4>
             <div class="login_container">
                 <button onclick="location.href='/login/'" class="login_button">Sign In</button>
             </div>
-
         </div>
         <div id="main_container">
             <h1 class="title">Dashboard list</h1>
@@ -55,6 +54,11 @@
         padding-top: 100px; 
         padding-bottom: 20px; 
         box-sizing: border-box; 
+    }
+
+    #logo{
+        font-size: 25pt;
+        font-weight: bold;
     }
 
     #content_container {

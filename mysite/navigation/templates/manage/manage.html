@@ -206,12 +206,17 @@
         background-color: #ac2925;
         transform: scale(0.95);
     }
+    #logo{
+        font-size: 25pt;
+        font-weight: bold;
+    }
   </style>
 </head>
 <body>
     <div id="header_container">
-        <img src="{% static 'imgs/logo/usi_white_logo.png' %}" alt="Logo">
-        <h2>USI HPH DASHBOARD SYSTEM</h2>
+        {% comment %} <img src="{% static 'imgs/logo/usi_white_logo.png' %}" alt="Logo"> {% endcomment %}
+        <div id="logo" >USI</div>
+        <h2>HPH DASHBOARD SYSTEM</h2>
         <form method="POST" action="{% url 'logout' %}">
             {% csrf_token %}
             <button type="submit" class="logout_button">Sign Out</button>
