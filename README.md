@@ -10,6 +10,7 @@
 $PROJECT_ROOT
 |  #mysite
 ├── mysite
+├── navigation
 |  #navigation
 └── navigation
 ```
