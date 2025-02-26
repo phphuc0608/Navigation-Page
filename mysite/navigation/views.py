@@ -32,13 +32,14 @@ def logout_view(request):
 
 @login_required
 def manage_view(request):
-    if request.method == 'POST':
-        title = request.POST.get('title')
-        link = request.POST.get('link')
-        Page.objects.create(title=title, link=link)
-        return redirect('manage')
-    pages = Page.objects.all()
-    return render(request, './manage/manage.html', {'pages': pages})
+   if request.method == 'POST':
+       title = request.POST.get('title')
+       link = request.POST.get('link')
+       image = request.FILES.get('image')  # Nhận ảnh từ form
+       Page.objects.create(title=title, link=link, image=image)  # Thêm ảnh vào cơ sở dữ liệu
+       return redirect('manage')
+   pages = Page.objects.all()
+   return render(request, './manage/manage.html', {'pages': pages})
 
 
 def edit_view(request, page_id):
@@ -46,8 +47,11 @@ def edit_view(request, page_id):
     if request.method == 'POST':
         title = request.POST.get('title')
         link = request.POST.get('link')
+        image = request.FILES.get('image')
         page.title = title
         page.link = link
+        if image:
+            page.image = image
         page.save()
         return redirect('manage')
     return render(request, './manage/edit.html', {'page': page})

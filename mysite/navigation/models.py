@@ -4,7 +4,7 @@ from django.db import models
 class Page(models.Model):
     title = models.CharField(max_length=10000)
     link = models.URLField()
-    
+    image = models.ImageField(upload_to='page_image/', null=True, blank=True)
     class Meta:
         db_table = 'pages'
         

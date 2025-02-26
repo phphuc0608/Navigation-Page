@@ -30,6 +30,15 @@
                     <label for="link">Link</label>
                     <input type="url" id="link" name="link" value="{{ page.link }}" required>
                 </div>
+                <div class="form_group">
+                    <label for="image">Image</label>
+                    <input type="file" id="image" name="image">
+                    {% if page.image %}
+                        <div>
+                            <img src="{{ page.image.url }}" alt="Current Image" width="100">
+                        </div>
+                    {% endif %}
+                </div>
                 <button type="submit" class="submit_button" style="margin-bottom: 10px;">Update</button>
                 <button onclick="location.href='/manage/'" class="submit_button">Go Back</button>
             </form>
