@@ -217,7 +217,7 @@
         {% comment %} <img src="{% static 'imgs/logo/usi_white_logo.png' %}" alt="Logo"> {% endcomment %}
         <div id="logo" >USI</div>
         <h2>HPH DASHBOARD SYSTEM</h2>
-        <form method="POST" action="{% url 'logout' %}">
+        <form method="POST" action="{% url 'logout' %}" enctype="multipart/form-data">
             {% csrf_token %}
             <button type="submit" class="logout_button">Sign Out</button>
         </form>
@@ -225,7 +225,7 @@
     <div id="content_container">
         <h1>Manage System</h1>
         <div class="form_container">
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="form_group">
                     <label for="title">Title</label>
@@ -237,7 +237,7 @@
                 </div>
                 <div class="form_group">
                     <label for="image">Image</label>
-                    <input type="file" id="image" name="image">
+                    <input type="file" id="image" name="image" enctype="multipart/form-data" required>
                 </div>
                 <button type="submit" class="submit_button">Add</button>
             </form>
