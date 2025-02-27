@@ -36,7 +36,12 @@ def manage_view(request):
        title = request.POST.get('title')
        link = request.POST.get('link')
        image = request.FILES.get('image')  # Nhận ảnh từ form
+       if image:
+           print(f"Đã nhận được file: {image.name}")
+       else:
+           print("Không nhận được file")
        Page.objects.create(title=title, link=link, image=image)  # Thêm ảnh vào cơ sở dữ liệu
+       print(request.FILES)
        return redirect('manage')
    pages = Page.objects.all()
    return render(request, './manage/manage.html', {'pages': pages})
@@ -52,6 +57,8 @@ def edit_view(request, page_id):
         page.link = link
         if image:
             page.image = image
+        else:
+            print("Không có file nào được gửi")
         page.save()
         return redirect('manage')
     return render(request, './manage/edit.html', {'page': page})
