@@ -9,14 +9,15 @@
 ```
 $PROJECT_ROOT
 |  #mysite
+├── media
 ├── mysite
 ├── navigation
 |  #navigation
 └── navigation
 ```
 ## 💻 User interface
-![user_UI](https://github.com/user-attachments/assets/e56059d8-e4a6-4bd9-a229-f913cc372e17)
-![manage_UI](https://github.com/user-attachments/assets/aec34354-aa71-422d-a4e6-4ed0893d0190)
+![user_UI](https://github.com/user-attachments/assets/0d78f8c3-0b9d-43dc-993e-8814f8293865)
+![manage_UI](https://github.com/user-attachments/assets/4881d4bd-439f-4910-ad12-baa7c601d301)
 ## 🗃️ Installation
 ### Prerequisite
 Python 3.12.5
