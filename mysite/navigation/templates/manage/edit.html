@@ -20,7 +20,7 @@
     <div id="content_container">
         <h1>Edit System</h1>
         <div class="form_container">
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="form_group">
                     <label for="title">Title</label>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="form_group">
                     <label for="image">Image</label>
-                    <input type="file" id="image" name="image">
+                    <input type="file" id="image" name="image" enctype="multipart/form-data" required>
                     {% if page.image %}
                         <div>
                             <img src="{{ page.image.url }}" alt="Current Image" width="100">
